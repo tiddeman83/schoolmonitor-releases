@@ -1,9 +1,14 @@
-# SchoolMonitor – releases
+# SchoolMonitor
 
-Hier staat de nieuwste versie van **SchoolMonitor Doorrollen.html**, de pagina waarmee scholen van Het Sticht hun SchoolMonitor-jaarbestand doorrollen naar een nieuw schooljaar.
+SchoolMonitor helpt de scholen van Het Sticht om de profielen van hun leerlingen bij te houden.
 
-- **Handleiding:** `SchoolMonitor Handleiding.pdf` (voor IB en directie; ook om te printen).
-- **Demovideo:** `SchoolMonitor Demo.mp4` (2,5 minuut, fictieve gegevens).
-- **Downloaden:** open `SchoolMonitor Doorrollen.html` hierboven en kies *Download raw file*.
-- **Updates:** de pagina leest bij het openen `versie.json` in deze repository. Is er een nieuwere versie, dan verschijnt er een downloadknop. Er wordt nooit code van buiten automatisch uitgevoerd, en er gaan geen gegevens naar GitHub.
-- **Privacy:** alle bestanden worden alleen in de browser verwerkt. Deze repository bevat geen leerlinggegevens; de ingebouwde voorbeelddata is fictief.
+Hier staan de nieuwste versies:
+
+- **SchoolMonitor.html**: voor scholen. Voor een nieuw schooljaar, een nieuwe school en de gegevens voor Het Sticht.
+- **SchoolMonitor Het Sticht.html**: voor Het Sticht. Maakt één overzicht van alle scholen samen.
+- **SchoolMonitor Zo zet je het klaar.pdf**: zo zet je SchoolMonitor op je computer.
+- **SchoolMonitor Handleiding.pdf**: de handleiding voor intern begeleiders en directeuren.
+- **SchoolMonitor Totaaloverzicht Het Sticht.pdf**: de handleiding voor Het Sticht.
+- **SchoolMonitor Demo.mp4**: een korte video.
+
+Je bestanden blijven altijd op je eigen computer; de pagina's sturen niets door. In deze map staan geen gegevens van leerlingen. De voorbeelden gebruiken een verzonnen school.
