@@ -9,6 +9,7 @@ Hier staan de nieuwste versies:
 - **SchoolMonitor Zo zet je het klaar.pdf**: zo zet je SchoolMonitor op je computer.
 - **SchoolMonitor Handleiding.pdf**: de handleiding voor intern begeleiders en directeuren.
 - **SchoolMonitor Totaaloverzicht Het Sticht.pdf**: de handleiding voor Het Sticht.
-- **SchoolMonitor Demo.mp4**: een korte video.
+- **SchoolMonitor Demo.mp4**: een korte video die laat zien hoe het werkt.
+- **SchoolMonitor Promo.mp4**: anderhalve minuut over wat SchoolMonitor voor scholen en voor Het Sticht doet.
 
 Je bestanden blijven altijd op je eigen computer; de pagina's sturen niets door. In deze map staan geen gegevens van leerlingen. De voorbeelden gebruiken een verzonnen school.
