@@ -1,5 +1,5 @@
 {
-  "versie": "0.5.0",
+  "versie": "0.6.0",
   "datum": "2026-09-24",
-  "notities": "Nieuw: startmodus voor scholen zonder jaarbestand en een automatische versiecontrole."
+  "notities": "Groepswissels gesplitst in doorstroom, zittenblijven, versnelling en controleren; vertrek gesplitst in uitstroom groep 8 en tussentijds."
 }
