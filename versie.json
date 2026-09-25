@@ -1,6 +1,6 @@
 {
-  "versie": "0.8.0",
+  "versie": "0.9.0",
   "datum": "2026-09-25",
-  "notities": "Nieuwe naam: Sticht Leerlingmonitor. Ondersteuningsniveaus van ZOUT, OPP, notities, en Bijwerken (nieuwe groep of nieuwe versie van het sjabloon).",
+  "notities": "Leest de standaardexport van ParnasSys (.xls) en neemt alleen over wat nodig is, met geslacht en leerjaar. De groepen bevestig je voordat het jaarbestand wordt gemaakt.",
   "sjabloon": 2
 }
