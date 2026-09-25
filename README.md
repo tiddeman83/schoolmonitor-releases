@@ -10,7 +10,7 @@ Hier staan de nieuwste versies:
 - **Sticht Leerlingmonitor Handleiding.pdf**: de handleiding voor intern begeleiders, kwaliteitscoördinatoren en directeuren.
 - **Sticht Leerlingmonitor Totaaloverzicht Het Sticht.pdf**: de handleiding voor Het Sticht.
 - **Voorbeeldmail aan gebruikers.txt**: een mail om naar de scholen te sturen.
-- De video's (SchoolMonitor Demo.mp4 en SchoolMonitor Promo.mp4) laten nog de vorige versie zien.
+- Nieuwe video's volgen.
 
 De bestanden met de oude naam (SchoolMonitor.html, SchoolMonitor Het Sticht.html, SchoolMonitor Doorrollen.html) zijn kopieën van de nieuwe pagina's, zodat oudere versies hun update vinden.
 
