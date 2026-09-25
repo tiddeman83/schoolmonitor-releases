@@ -104,7 +104,8 @@ footer{max-width:960px;margin:0 auto;padding:0 16px 30px;font-size:12px;color:va
   <div id="status" class="status"><span class="stip"></span><span id="statustekst">Even geduld…</span></div>
 </header>
 <main>
-  <div class="privacy"><b>Je bestanden blijven op deze computer.</b> Ze worden nergens naartoe gestuurd.</div>
+  <div class="privacy"><b>Alles gebeurt op deze computer.</b> Je bestanden en de gegevens van leerlingen worden nergens naartoe gestuurd.
+  Uit de Leerlingenlijst KD van ParnasSys gebruiken we alleen wat nodig is: naam, groep, leerjaar, geslacht en geboortedatum. De rest, zoals het BSN en de contactgegevens, wordt meteen weggegooid.</div>
 
   <div class="update" id="update"><div id="update-tekst"></div><button id="update-knop">Nieuwe versie downloaden</button></div>
 
@@ -180,7 +181,7 @@ footer{max-width:960px;margin:0 auto;padding:0 16px 30px;font-size:12px;color:va
     <div class="volgende" style="margin-top:14px"><b>En dan:</b><ol id="daarna"></ol></div>
   </section>
 </main>
-<footer>Sticht Leerlingmonitor · versie 0.9.0 <span id="update-status"></span> · Het Sticht</footer>
+<footer>Sticht Leerlingmonitor · versie 0.9.1 <span id="update-status"></span> · Het Sticht</footer>
 
 <script type="text/plain" id="py-sjabloon">"""Sticht Leerlingmonitor jaarbestand – sjabloon (Excel zonder macro's).
 
@@ -1527,7 +1528,7 @@ def lees_parnassys(data: bytes, bestandsnaam: str):
         if 'groep' in kol and ('achter' in kol or 'naam' in kol):
             break
     else:
-        raise RollforwardFout('In de groepslijst staan geen kolommen "Groep" en "Achternaam" (of "Naam"). Maak de export in ParnasSys opnieuw, met die kolommen erin.')
+        raise RollforwardFout('Dit is niet de Leerlingenlijst KD van ParnasSys: er staan geen kolommen "Groep" en "Achternaam" in. Download de Leerlingenlijst KD opnieuw uit de standaardrapportage van ParnasSys.')
     cel = lambda r, v: (r[kol[v]] if v in kol and kol[v] < len(r) else None)
     rijen = tabel[kop_r + 1:]
     # geslacht: J/M (jongen/meisje) of M/V (man/vrouw)?
@@ -1573,13 +1574,15 @@ def echt_nr(nr):
 def meldingen_lijst(info, lln):
     """Meldingen over de groepslijst zelf."""
     m = []
-    if not info['nummer']:
-        m.append('In de groepslijst staat geen leerlingnummer. Leerlingen worden daarom herkend aan hun naam en geboortedatum. '
-                 'Voeg als het kan de kolom Leerlingnummer toe aan de export in ParnasSys.')
-    else:
+    # De Leerlingenlijst KD heeft geen leerlingnummer; dan herkennen we leerlingen aan naam en geboortedatum (geen melding nodig).
+    if info['nummer']:
         zonder = [weergavenaam(p) for p in lln if not echt_nr(p['nr'])]
         if zonder:
             m.append(f'{len(zonder)} leerling(en) hebben geen leerlingnummer in de groepslijst. Ze zijn daardoor later lastiger terug te vinden.')
+    if not (info['geslacht'] and info['leerjaar']):
+        mist = [t for t, ok in (('het geslacht', info['geslacht']), ('het leerjaar ("Klas- of groepnummer")', info['leerjaar'])) if not ok]
+        m.append('Deze lijst lijkt niet de Leerlingenlijst KD uit de standaardrapportage van ParnasSys: ' + ' en '.join(mist)
+                 + (' ontbreken' if len(mist) > 1 else ' ontbreekt') + '. Gebruik liefst altijd die lijst.')
     if info['genegeerd']:
         m.append(f"Uit de groepslijst is alleen gebruikt: {', '.join(info['gebruikt'])}. De andere {info['genegeerd']} kolommen"
                  + (' (waaronder het BSN en de contactgegevens)' if info['bsn'] else '') + ' zijn niet overgenomen.')
@@ -2519,7 +2522,7 @@ def koepel_maken(lijst, schooljaar, afschermen, verwacht=None):
 const $ = s => document.querySelector(s);
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
 const XLSX = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-const VERSIE = '0.9.0';
+const VERSIE = '0.9.1';
 const UPDATE_JSON = 'https://raw.githubusercontent.com/tiddeman83/schoolmonitor-releases/main/versie.json', UPDATE_HTML = 'https://raw.githubusercontent.com/tiddeman83/schoolmonitor-releases/main/Sticht%20Leerlingmonitor.html', BESTANDSNAAM = 'Sticht Leerlingmonitor.html';
 const SCHOLEN = ["Aloysius school", "Daltonschool Nicolaas", "Damiaanschool Centrum", "Damiaanschool Kerckebosch", "KBS De Griffel", "Montini Jenaplanschool", "Valkenheuvel", "De Kameleon", "De Windroos"], MERK = 'Sticht Leerlingmonitor';
 const vandaag = () => new Date().toISOString().slice(0, 10);
@@ -2532,7 +2535,7 @@ const MODI = {
     titel: 'Naar een nieuw schooljaar',
     uitleg: 'Aan het eind van het schooljaar maak je hier het jaarbestand voor volgend jaar. De kenmerken die blijven, zoals dyslexie, gaan per leerling vanzelf mee.',
     stappen: {oud: ['Jaarbestand van dit schooljaar', 'Het bestand waarin je dit jaar hebt gewerkt. Klik hier of sleep het bestand hierheen.'],
-              pl: ['Nieuwe groepslijst uit ParnasSys', 'De leerlingenlijst voor volgend schooljaar (de standaardexport uit ParnasSys). Alleen naam, groep, leerjaar, geslacht en geboortedatum worden gebruikt.'],
+              pl: ['Leerlingenlijst KD uit ParnasSys', 'Uit de standaardrapportage van ParnasSys, met de groepen van volgend schooljaar. Download altijd deze lijst; je hoeft er niets aan te veranderen.'],
               hist: ['Historiebestand', 'Het bestand "Sticht Leerlingmonitor Historie". Heb je dat nog niet? Dan wordt het voor je gemaakt.']},
     toon: ['oud', 'pl', 'hist'], knop: 'Maak het nieuwe jaarbestand', bezig: 'Het nieuwe jaarbestand wordt gemaakt…', sj: 'Nieuw schooljaar', demo: 'Probeer het met voorbeeldbestanden',
   },
@@ -2540,13 +2543,13 @@ const MODI = {
     titel: 'Bijwerken',
     uitleg: 'Is er een groep bijgekomen, zijn leerlingen van groep gewisseld, of is er een nieuwe versie van het sjabloon? Hier maak je een nieuwe versie van je jaarbestand. Al je kruisjes en notities gaan mee; er gaat niets verloren.',
     stappen: {oud: ['Jaarbestand van dit schooljaar', 'Het bestand waarin je nu werkt. Klik hier of sleep het bestand hierheen.'],
-              pl: ['Groepslijst van nu uit ParnasSys', 'Alleen nodig als er iets aan de groepen of leerlingen is veranderd. Wil je alleen de nieuwste versie van het sjabloon? Laat dit dan leeg.']},
+              pl: ['Leerlingenlijst KD van nu', 'Uit de standaardrapportage van ParnasSys. Alleen nodig als er iets aan de groepen of leerlingen is veranderd. Wil je alleen de nieuwste versie van het sjabloon? Laat dit dan leeg.']},
     toon: ['oud', 'pl'], knop: 'Maak de bijgewerkte versie', bezig: 'De bijgewerkte versie wordt gemaakt…', sj: '', demo: 'Probeer het met een voorbeeldbestand',
   },
   start: {
     titel: 'Een nieuwe school',
     uitleg: 'Werkt je school nog niet met de Sticht Leerlingmonitor? Dan maak je hier het eerste jaarbestand, met alle groepen en leerlingen uit ParnasSys.',
-    stappen: {pl: ['Groepslijst uit ParnasSys', 'De leerlingenlijst van dit schooljaar (de standaardexport uit ParnasSys). Alleen naam, groep, leerjaar, geslacht en geboortedatum worden gebruikt.']},
+    stappen: {pl: ['Leerlingenlijst KD uit ParnasSys', 'Uit de standaardrapportage van ParnasSys, met de groepen van dit schooljaar. Download altijd deze lijst; je hoeft er niets aan te veranderen.']},
     toon: ['pl'], knop: 'Maak het jaarbestand', bezig: 'Het jaarbestand wordt gemaakt…', sj: 'Schooljaar', demo: 'Vul een voorbeeldlijst in',
   },
   export: {
@@ -2733,10 +2736,10 @@ $('#demo').addEventListener('click', () => {
   const d = JSON.parse($('#demo-data').textContent);
   if (modus === 'start') {
     if (!$('#school').value.trim()) { $('#school-kies').value = '*'; $('#v-school-anders').hidden = false; $('#school').value = 'OBS De Vlonder (voorbeeld)'; }
-    zetBestand('pl', 'ParnasSys - Leerlingenlijst (voorbeeld).xls', b64(d.pl)); return;
+    zetBestand('pl', 'ParnasSys - Leerlingenlijst KD (voorbeeld).xls', b64(d.pl)); return;
   }
   zetBestand('oud', 'Sticht Leerlingmonitor De Vlonder 2026-2027 (voorbeeld).xlsx', b64(d.oud));
-  if (modus === 'door') zetBestand('pl', 'ParnasSys - Leerlingenlijst (voorbeeld).xls', b64(d.pl));
+  if (modus === 'door') zetBestand('pl', 'ParnasSys - Leerlingenlijst KD (voorbeeld).xls', b64(d.pl));
   if (modus !== 'bij') zetBestand('hist', 'Sticht Leerlingmonitor Historie (voorbeeld).xlsx', b64(d.hist));
 });
 

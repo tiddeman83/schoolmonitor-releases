@@ -8,6 +8,8 @@ Vanaf dit schooljaar werken we met de Sticht Leerlingmonitor (de vernieuwde Scho
 - Vanaf niveau 4a hoort er een OPP bij. De monitor laat zien waar dat nog ontbreekt.
 - Per leerling kun je een korte notitie maken met acties, zoals "TLV aanvragen". Belangrijke aantekeningen rondom zorg horen altijd in ParnasSys.
 - Een nieuwe groep, leerlingen die van groep wisselen en de overstap naar een nieuw schooljaar gaan vanzelf, met "Sticht Leerlingmonitor.html".
+- De leerlingen komen uit ParnasSys. Gebruik daarvoor altijd de Leerlingenlijst KD uit de standaardrapportage van ParnasSys. De pagina gebruikt er alleen naam, groep, leerjaar, jongen/meisje en geboortedatum uit; de rest (zoals het BSN) wordt meteen weggegooid.
+- Alles gebeurt op je eigen computer. De bestanden die je in de pagina kiest, worden niet geüpload en verlaten je laptop niet.
 
 Wat moet je doen?
 

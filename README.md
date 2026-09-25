@@ -10,8 +10,9 @@ Hier staan de nieuwste versies:
 - **Sticht Leerlingmonitor Handleiding.pdf**: de handleiding voor intern begeleiders, kwaliteitscoördinatoren en directeuren.
 - **Sticht Leerlingmonitor Totaaloverzicht Het Sticht.pdf**: de handleiding voor Het Sticht.
 - **Voorbeeldmail aan gebruikers.txt**: een mail om naar de scholen te sturen.
-- Nieuwe video's volgen.
+- **Sticht Leerlingmonitor Demo.mp4**: een korte video (2 minuten) van de pagina, stap voor stap.
+- **Sticht Leerlingmonitor Promo.mp4**: een korte kennismaking (2 minuten) voor scholen en Het Sticht.
 
 De bestanden met de oude naam (SchoolMonitor.html, SchoolMonitor Het Sticht.html, SchoolMonitor Doorrollen.html) zijn kopieën van de nieuwe pagina's, zodat oudere versies hun update vinden.
 
-Je bestanden blijven altijd op je eigen computer; de pagina's sturen niets door. In deze map staan geen gegevens van leerlingen. De voorbeelden gebruiken een verzonnen school.
+Alles gebeurt op je eigen computer: de bestanden die je in de pagina's kiest, worden niet geüpload en verlaten je laptop niet. Uit ParnasSys gebruiken we alleen de Leerlingenlijst KD uit de standaardrapportage, en daaruit alleen wat nodig is. In deze map staan geen gegevens van leerlingen. De voorbeelden gebruiken een verzonnen school.

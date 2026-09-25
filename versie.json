@@ -1,6 +1,6 @@
 {
-  "versie": "0.9.0",
+  "versie": "0.9.1",
   "datum": "2026-09-25",
-  "notities": "Leest de standaardexport van ParnasSys (.xls) en neemt alleen over wat nodig is, met geslacht en leerjaar. De groepen bevestig je voordat het jaarbestand wordt gemaakt.",
+  "notities": "Werkt met de Leerlingenlijst KD uit de standaardrapportage van ParnasSys en gebruikt daaruit alleen wat nodig is. Duidelijkere meldingen, nieuwe handleiding en nieuwe video's.",
   "sjabloon": 2
 }
