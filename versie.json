@@ -1,5 +1,6 @@
 {
-  "versie": "0.7.0",
-  "datum": "2026-09-24",
-  "notities": "Nieuw: groepen met een eigen naam, en een bestand voor Het Sticht."
+  "versie": "0.8.0",
+  "datum": "2026-09-25",
+  "notities": "Nieuwe naam: Sticht Leerlingmonitor. Ondersteuningsniveaus van ZOUT, OPP, notities, en Bijwerken (nieuwe groep of nieuwe versie van het sjabloon).",
+  "sjabloon": 2
 }
