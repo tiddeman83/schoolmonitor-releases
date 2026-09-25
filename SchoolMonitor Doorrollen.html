@@ -104,8 +104,8 @@ footer{max-width:960px;margin:0 auto;padding:0 16px 30px;font-size:12px;color:va
   <div id="status" class="status"><span class="stip"></span><span id="statustekst">Even geduld…</span></div>
 </header>
 <main>
-  <div class="privacy"><b>Alles gebeurt op deze computer.</b> Je bestanden en de gegevens van leerlingen worden nergens naartoe gestuurd.
-  Uit de Leerlingenlijst KD van ParnasSys gebruiken we alleen wat nodig is: naam, groep, leerjaar, geslacht en geboortedatum. De rest, zoals het BSN en de contactgegevens, wordt meteen weggegooid.</div>
+  <div class="privacy"><b>Alles gebeurt op deze computer.</b> De bestanden die je hier kiest, gaan nergens naartoe.
+  Uit de Leerlingenlijst KD haalt de pagina alleen wat hij nodig heeft: naam, groep, leerjaar, geslacht en geboortedatum.</div>
 
   <div class="update" id="update"><div id="update-tekst"></div><button id="update-knop">Nieuwe versie downloaden</button></div>
 
@@ -181,7 +181,7 @@ footer{max-width:960px;margin:0 auto;padding:0 16px 30px;font-size:12px;color:va
     <div class="volgende" style="margin-top:14px"><b>En dan:</b><ol id="daarna"></ol></div>
   </section>
 </main>
-<footer>Sticht Leerlingmonitor · versie 0.9.1 <span id="update-status"></span> · Het Sticht</footer>
+<footer>Sticht Leerlingmonitor · versie 0.9.2 <span id="update-status"></span> · Het Sticht</footer>
 
 <script type="text/plain" id="py-sjabloon">"""Sticht Leerlingmonitor jaarbestand – sjabloon (Excel zonder macro's).
 
@@ -1553,7 +1553,7 @@ def lees_parnassys(data: bytes, bestandsnaam: str):
         raise RollforwardFout('Er staan geen leerlingen in de groepslijst.')
     kop = [str(k or '').strip() for k in tabel[kop_r]]
     info = {'gebruikt': [kop[i] for i in sorted(kol.values())], 'genegeerd': sum(1 for i, k in enumerate(kop) if k and i not in kol.values()),
-            'bsn': any(k.lower() == 'bsn' for k in kop), 'nummer': 'nr' in kol, 'geslacht': 'geslacht' in kol, 'leerjaar': 'leerjaar' in kol}
+            'nummer': 'nr' in kol, 'geslacht': 'geslacht' in kol, 'leerjaar': 'leerjaar' in kol}
     return uit, overgeslagen, info
 
 
@@ -1584,8 +1584,7 @@ def meldingen_lijst(info, lln):
         m.append('Deze lijst lijkt niet de Leerlingenlijst KD uit de standaardrapportage van ParnasSys: ' + ' en '.join(mist)
                  + (' ontbreken' if len(mist) > 1 else ' ontbreekt') + '. Gebruik liefst altijd die lijst.')
     if info['genegeerd']:
-        m.append(f"Uit de groepslijst is alleen gebruikt: {', '.join(info['gebruikt'])}. De andere {info['genegeerd']} kolommen"
-                 + (' (waaronder het BSN en de contactgegevens)' if info['bsn'] else '') + ' zijn niet overgenomen.')
+        m.append(f"Uit de lijst is alleen gebruikt wat nodig is: {', '.join(info['gebruikt'])}. De andere kolommen worden niet gebruikt en niet bewaard.")
     return m
 
 
@@ -2522,7 +2521,7 @@ def koepel_maken(lijst, schooljaar, afschermen, verwacht=None):
 const $ = s => document.querySelector(s);
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
 const XLSX = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-const VERSIE = '0.9.1';
+const VERSIE = '0.9.2';
 const UPDATE_JSON = 'https://raw.githubusercontent.com/tiddeman83/schoolmonitor-releases/main/versie.json', UPDATE_HTML = 'https://raw.githubusercontent.com/tiddeman83/schoolmonitor-releases/main/Sticht%20Leerlingmonitor.html', BESTANDSNAAM = 'Sticht Leerlingmonitor.html';
 const SCHOLEN = ["Aloysius school", "Daltonschool Nicolaas", "Damiaanschool Centrum", "Damiaanschool Kerckebosch", "KBS De Griffel", "Montini Jenaplanschool", "Valkenheuvel", "De Kameleon", "De Windroos"], MERK = 'Sticht Leerlingmonitor';
 const vandaag = () => new Date().toISOString().slice(0, 10);

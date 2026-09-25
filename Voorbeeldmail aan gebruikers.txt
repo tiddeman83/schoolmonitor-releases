@@ -2,34 +2,34 @@ Onderwerp: Sticht Leerlingmonitor: zo zet je het klaar
 
 Beste [naam],
 
-Vanaf dit schooljaar werken we met de Sticht Leerlingmonitor (de vernieuwde SchoolMonitor). Het is nog steeds een Excel-bestand, maar een aantal dingen is nieuw:
+Vanaf dit schooljaar werken we met de Sticht Leerlingmonitor, de vernieuwde SchoolMonitor. Het blijft een Excel-bestand, maar er is een en ander veranderd:
 
 - De ondersteuningsniveaus volgen de indeling van ZOUT: 1, 2, 3, 4a, 4b en 5. Ga in Excel met de muis op een niveau staan voor de uitleg.
 - Vanaf niveau 4a hoort er een OPP bij. De monitor laat zien waar dat nog ontbreekt.
-- Per leerling kun je een korte notitie maken met acties, zoals "TLV aanvragen". Belangrijke aantekeningen rondom zorg horen altijd in ParnasSys.
-- Een nieuwe groep, leerlingen die van groep wisselen en de overstap naar een nieuw schooljaar gaan vanzelf, met "Sticht Leerlingmonitor.html".
-- De leerlingen komen uit ParnasSys. Gebruik daarvoor altijd de Leerlingenlijst KD uit de standaardrapportage van ParnasSys. De pagina gebruikt er alleen naam, groep, leerjaar, jongen/meisje en geboortedatum uit; de rest (zoals het BSN) wordt meteen weggegooid.
-- Alles gebeurt op je eigen computer. De bestanden die je in de pagina kiest, worden niet geüpload en verlaten je laptop niet.
+- Per leerling kun je een korte notitie maken, alleen voor acties, zoals "TLV aanvragen". Aantekeningen over de zorg horen in ParnasSys.
+- Een nieuwe groep, leerlingen die van groep wisselen en de overstap naar een nieuw schooljaar regel je met "Sticht Leerlingmonitor.html".
+- De leerlingen komen uit ParnasSys. Gebruik daarvoor altijd de Leerlingenlijst KD uit de standaardrapportage. De pagina haalt daar alleen de gegevens uit die nodig zijn: naam, groep, leerjaar, geslacht en geboortedatum.
+- Alles gebeurt op je eigen computer. De bestanden die je in de pagina kiest, gaan nergens naartoe.
 
 Wat moet je doen?
 
-1. Open deze link: [link naar de map met de bestanden]
-2. Download "Sticht Leerlingmonitor.html" en "Sticht Leerlingmonitor Zo zet je het klaar.pdf".
-3. Volg de stappen in "Zo zet je het klaar". Dat kost ongeveer tien minuten. Je hoeft niets te installeren.
+1. Ga naar https://github.com/tiddeman83/schoolmonitor-releases
+2. Download "Sticht Leerlingmonitor.html" en "Sticht Leerlingmonitor Zo zet je het klaar.pdf". Klik op het bestand en daarna rechtsboven op het pijltje.
+3. Volg de stappen in "Zo zet je het klaar". Dat kost ongeveer tien minuten en je hoeft niets te installeren.
 
-In dezelfde map vind je ook de handleiding.
+Op dezelfde pagina staan ook de handleiding en een korte video.
 
 [Alleen als je een jaarbestand meestuurt:]
 Het jaarbestand van jullie school staat klaar in [plek]. Zet het in de beveiligde map van IB en directie.
 
 [Alleen als jullie al een jaarbestand hebben van de oude SchoolMonitor:]
-Open Sticht Leerlingmonitor.html, kies "Bijwerken" en kies je jaarbestand. Je krijgt een nieuwe versie met de nieuwe indeling; al je gegevens gaan mee. Zet het oude bestand daarna in de map Archief.
+Open Sticht Leerlingmonitor.html, kies "Bijwerken" en kies je jaarbestand. Je krijgt een nieuwe versie met de nieuwe indeling, en al je gegevens gaan mee. Zet het oude bestand daarna in de map Archief.
 
 Het bestand met aantallen voor Het Sticht zet je voortaan in deze uploadmap: [link "Bestanden aanvragen" van de kwaliteitsmanager]. Mailen is niet meer nodig.
 
-Belangrijk: in het jaarbestand staan gevoelige gegevens over leerlingen. Bewaar het alleen in de beveiligde map van IB en directie en stuur het niet per mail door. Zet er geen wachtwoord op; dan kan de pagina het niet meer openen. De beveiliging zit in de map.
+In het jaarbestand staan gevoelige gegevens over leerlingen. Bewaar het alleen in de beveiligde map van IB en directie en stuur het niet per mail door. Zet er ook geen wachtwoord op, want dan kan de pagina het niet meer openen. De beveiliging zit in de map.
 
-Lukt iets niet, of heb je een vraag? Mail of bel me gerust: [naam, e-mailadres, telefoonnummer].
+Lukt iets niet of heb je een vraag? Mail of bel me gerust: [naam, e-mailadres, telefoonnummer].
 
 Met vriendelijke groet,
 
