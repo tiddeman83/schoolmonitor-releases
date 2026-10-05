@@ -2,7 +2,16 @@
 
 Met de Sticht Leerlingmonitor houden de scholen van Het Sticht per groep bij welke kenmerken hun leerlingen hebben en welke ondersteuning ze krijgen, volgens de ondersteuningsniveaus van ZOUT.
 
-Hier staat altijd de nieuwste versie. Klik op een bestand en daarna rechtsboven op het pijltje (Download raw file) om het te downloaden. Heb je een link gekregen naar een gedeelde map, dan kun je de bestanden ook daar downloaden.
+## Downloaden in één keer
+
+- **Voor de scholen:** [Sticht-Leerlingmonitor-scholen.zip](https://github.com/tiddeman83/schoolmonitor-releases/releases/latest/download/Sticht-Leerlingmonitor-scholen.zip). Daarin zitten de pagina, de handleiding, de kaartjes, een voorbeeld van de Leerlingenlijst KD en de demovideo.
+- **Voor Het Sticht:** [Sticht-Leerlingmonitor-Het-Sticht.zip](https://github.com/tiddeman83/schoolmonitor-releases/releases/latest/download/Sticht-Leerlingmonitor-Het-Sticht.zip). Daarin zit de pagina voor het totaaloverzicht met de handleiding.
+
+Deze links geven altijd de nieuwste versie. Pak het zip-bestand eerst uit (Windows: rechtermuisknop, Alles uitpakken. Mac: dubbelklikken). Heb je een link gekregen naar een gedeelde map, dan staat daar hetzelfde.
+
+## Alle losse bestanden
+
+Je kunt ook een los bestand downloaden: klik erop en daarna rechtsboven op het pijltje (Download raw file).
 
 - **Sticht Leerlingmonitor.html**: voor de scholen. Hiermee maak je het jaarbestand voor een nieuw schooljaar, werk je het bij, begin je als nieuwe school en maak je het bestand voor Het Sticht.
 - **Sticht Leerlingmonitor Totaaloverzicht.html**: voor Het Sticht. Maakt één overzicht van alle scholen samen.

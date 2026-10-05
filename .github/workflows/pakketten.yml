@@ -1,0 +1,33 @@
+# Maakt bij elke nieuwe versie (een tag zoals v0.9.4) de zip-bestanden en zet ze in een GitHub-release.
+# De nieuwste staat dan altijd op:
+#   https://github.com/tiddeman83/schoolmonitor-releases/releases/latest/download/Sticht-Leerlingmonitor-scholen.zip
+#   https://github.com/tiddeman83/schoolmonitor-releases/releases/latest/download/Sticht-Leerlingmonitor-Het-Sticht.zip
+# Welke bestanden erin gaan, staat in pakketten.json (gemaakt door bouw.py --release).
+name: Pakketten
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip-bestanden maken
+        run: |
+          python3 - <<'PY'
+          import json, os, shutil
+          for zipnaam, (map_, bestanden) in json.load(open('pakketten.json', encoding='utf-8')).items():
+              os.makedirs(f'uit/{map_}')
+              for b in bestanden:
+                  shutil.copy(b, f'uit/{map_}/{b}')
+              shutil.make_archive(zipnaam[:-4], 'zip', 'uit', map_)
+              print(zipnaam, os.path.getsize(zipnaam))
+          PY
+      - name: GitHub-release maken
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 -c "import json; print(json.load(open('versie.json', encoding='utf-8'))['notities'])" > notities.txt
+          gh release create "$GITHUB_REF_NAME" Sticht-Leerlingmonitor-*.zip --title "Sticht Leerlingmonitor $GITHUB_REF_NAME" --notes-file notities.txt --latest
