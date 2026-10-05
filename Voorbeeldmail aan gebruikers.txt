@@ -13,11 +13,11 @@ Vanaf dit schooljaar werken we met de Sticht Leerlingmonitor, de vernieuwde Scho
 
 Wat moet je doen?
 
-1. Ga naar https://github.com/tiddeman83/schoolmonitor-releases
-2. Download "Sticht Leerlingmonitor.html" en "Sticht Leerlingmonitor Zo zet je het klaar.pdf". Klik op het bestand en daarna rechtsboven op het pijltje.
-3. Volg de stappen in "Zo zet je het klaar". Dat kost ongeveer tien minuten en je hoeft niets te installeren.
+1. Download "Sticht Leerlingmonitor.html" en "Sticht Leerlingmonitor Zo zet je het klaar.pdf". Dat kan via deze link: [link naar de gedeelde map]
+   Of via GitHub, daar staat altijd de nieuwste versie: https://github.com/tiddeman83/schoolmonitor-releases (klik op het bestand en daarna rechtsboven op het pijltje).
+2. Volg de stappen in "Zo zet je het klaar". Dat kost ongeveer tien minuten en je hoeft niets te installeren.
 
-Op dezelfde pagina staan ook de handleiding en een korte video.
+Op dezelfde plek staan ook de handleiding, een korte video, het kaartje "Wat heb je nodig?", het kaartje "Veiligheid en privacy" en een voorbeeld van de Leerlingenlijst KD.
 
 [Alleen als je een jaarbestand meestuurt:]
 Het jaarbestand van jullie school staat klaar in [plek]. Zet het in de beveiligde map van IB en directie.
