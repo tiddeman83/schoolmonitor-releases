@@ -4,8 +4,9 @@ Met de Sticht Leerlingmonitor houden de scholen van Het Sticht per groep bij wel
 
 ## Downloaden in één keer
 
-- **Voor de scholen:** [Sticht-Leerlingmonitor-scholen.zip](https://github.com/tiddeman83/schoolmonitor-releases/releases/latest/download/Sticht-Leerlingmonitor-scholen.zip). Daarin zitten de pagina, de handleiding, de kaartjes, een voorbeeld van de Leerlingenlijst KD en de demovideo.
+- **Voor de scholen:** [Sticht-Leerlingmonitor-scholen.zip](https://github.com/tiddeman83/schoolmonitor-releases/releases/latest/download/Sticht-Leerlingmonitor-scholen.zip). Daarin zitten de pagina, de handleiding, de kaartjes, een voorbeeld van de Leerlingenlijst KD en vier korte video's met gesproken uitleg.
 - **Voor Het Sticht:** [Sticht-Leerlingmonitor-Het-Sticht.zip](https://github.com/tiddeman83/schoolmonitor-releases/releases/latest/download/Sticht-Leerlingmonitor-Het-Sticht.zip). Daarin zit de pagina voor het totaaloverzicht met de handleiding.
+- **Voor testgebruikers:** [Sticht-Leerlingmonitor-uitleg-testgebruikers.zip](https://github.com/tiddeman83/schoolmonitor-releases/releases/latest/download/Sticht-Leerlingmonitor-uitleg-testgebruikers.zip). Het idee achter de Leerlingmonitor, wat erin zit en hoe het werkt, als video met gesproken uitleg en als PDF.
 
 Deze links geven altijd de nieuwste versie. Pak het zip-bestand eerst uit (Windows: rechtermuisknop, Alles uitpakken. Mac: dubbelklikken). Heb je een link gekregen naar een gedeelde map, dan staat daar hetzelfde.
 
@@ -20,7 +21,8 @@ Je kunt ook een los bestand downloaden: klik erop en daarna rechtsboven op het p
 - **Sticht Leerlingmonitor Veiligheid en privacy.pdf**: één kaartje over hoe de Leerlingmonitor met gegevens omgaat.
 - **Sticht Leerlingmonitor Handleiding.pdf**: de handleiding voor intern begeleiders, kwaliteitscoördinatoren en directeuren.
 - **Sticht Leerlingmonitor Totaaloverzicht Het Sticht.pdf**: de handleiding voor Het Sticht.
-- **Sticht Leerlingmonitor Demo.mp4**: een korte video waarin je stap voor stap ziet hoe de pagina werkt.
+- **Sticht Leerlingmonitor Demo 1 t/m 4**: korte video's met gesproken uitleg: een nieuwe monitor aanmaken, naar een nieuw schooljaar, aanpassingen tijdens het jaar, aanleveren bij Het Sticht.
+- **Sticht Leerlingmonitor Uitleg voor testgebruikers** (video en PDF): het idee, wat erin zit en hoe het werkt.
 - **Sticht Leerlingmonitor Promo.mp4**: een korte kennismaking voor scholen en Het Sticht.
 - **Voorbeeld Leerlingenlijst KD.xls**: zo ziet de Leerlingenlijst KD uit ParnasSys eruit, met verzonnen leerlingen.
 - **Voorbeeldmail aan gebruikers.txt**: een mail om naar de scholen te sturen.
@@ -30,3 +32,5 @@ SchoolMonitor.html, SchoolMonitor Het Sticht.html en SchoolMonitor Doorrollen.ht
 Alles gebeurt op je eigen computer. De bestanden die je in de pagina's kiest, gaan nergens naartoe. Uit ParnasSys gebruik je de Leerlingenlijst KD uit de standaardrapportage, en de pagina haalt daar alleen uit wat nodig is. In deze map staan geen gegevens van leerlingen; de voorbeelden gebruiken een verzonnen school.
 
 Ontwikkeld door Tijmen Baas. De handleidingen en video's zijn gemaakt met hulp van Claude (Anthropic).
+
+Bugs en wensen: mail naar t.baas2@windroos.nl. Stuur nooit een bestand met leerlinggegevens mee.

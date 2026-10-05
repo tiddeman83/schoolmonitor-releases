@@ -18,7 +18,7 @@ Wat moet je doen?
 2. Pak het zip-bestand uit (Windows: rechtermuisknop, Alles uitpakken. Mac: dubbelklikken).
 3. Volg de stappen in "Zo zet je het klaar". Dat kost ongeveer tien minuten en je hoeft niets te installeren.
 
-In het pakket zitten ook de handleiding, een korte video, het kaartje "Wat heb je nodig?", het kaartje "Veiligheid en privacy" en een voorbeeld van de Leerlingenlijst KD.
+In het pakket zitten ook de handleiding, vier korte video's met gesproken uitleg, het kaartje "Wat heb je nodig?", het kaartje "Veiligheid en privacy" en een voorbeeld van de Leerlingenlijst KD.
 
 [Alleen als je een jaarbestand meestuurt:]
 Het jaarbestand van jullie school staat klaar in [plek]. Zet het in de beveiligde map van IB en directie.
@@ -31,6 +31,7 @@ Het bestand met aantallen voor Het Sticht zet je voortaan in deze uploadmap: [li
 In het jaarbestand staan gevoelige gegevens over leerlingen. Bewaar het alleen in de beveiligde map van IB en directie en stuur het niet per mail door. Zet er ook geen wachtwoord op, want dan kan de pagina het niet meer openen. De beveiliging zit in de map.
 
 Lukt iets niet of heb je een vraag? Mail of bel me gerust: [naam, e-mailadres, telefoonnummer].
+Zie je een fout in de Leerlingmonitor of heb je een wens? Mail dat naar t.baas2@windroos.nl. Stuur nooit een bestand met leerlinggegevens mee.
 
 Met vriendelijke groet,
 
