@@ -18,7 +18,7 @@ Wat moet je doen?
 2. Pak het zip-bestand uit (Windows: rechtermuisknop, Alles uitpakken. Mac: dubbelklikken).
 3. Volg de stappen in "Zo zet je het klaar". Dat kost ongeveer tien minuten en je hoeft niets te installeren.
 
-In het pakket zitten ook de handleiding, vier korte video's met gesproken uitleg, het kaartje "Wat heb je nodig?", het kaartje "Veiligheid en privacy" en een voorbeeld van de Leerlingenlijst KD.
+In het pakket zitten ook de handleiding, het kaartje "Wat heb je nodig?", het kaartje "Veiligheid en privacy" en een voorbeeld van de Leerlingenlijst KD.
 
 [Alleen als je een jaarbestand meestuurt:]
 Het jaarbestand van jullie school staat klaar in [plek]. Zet het in de beveiligde map van IB en directie.

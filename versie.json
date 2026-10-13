@@ -1,6 +1,6 @@
 {
-  "versie": "0.9.7",
+  "versie": "0.9.8",
   "datum": "2026-10-13",
-  "notities": "Er is nu ook een online versie, die altijd de nieuwste is en die je als app kunt installeren. Alles blijft op je eigen computer.",
-  "sjabloon": 2
+  "notities": "Nieuwe versie van het sjabloon: per leerling het leerjaar, en de Monitor en het Dashboard laten de cijfers ook per leerjaar zien. Werk je jaarbestand bij met Bijwerken (alleen je jaarbestand kiezen).",
+  "sjabloon": 3
 }
