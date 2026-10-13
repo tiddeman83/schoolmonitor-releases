@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; form-action 'none'; base-uri 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sticht Leerlingmonitor</title>
+<link rel="icon" href="iconen/icoon-192.png">
+<style>
+:root{--navy:#102A4C;--blauw:#2A6FC9;--groen:#0F7F5B;--zacht:#5b6477;--lijn:#dfe4ec;--bg:#f4f6f9;--kaart:#fff;--tekst:#1d2433}
+@media (prefers-color-scheme:dark){:root{--navy:#cfe0ff;--zacht:#9aa3b5;--lijn:#2c3446;--bg:#141a26;--kaart:#1b2232;--tekst:#e6e9ef}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tekst);font:16px/1.55 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.regenboog{height:8px;background:linear-gradient(90deg,#92D050 0 25%,#FFE600 25% 50%,#FFC000 50% 75%,#FF0000 75%)}
+main{max-width:900px;margin:0 auto;padding:36px 16px 40px}
+h1{color:var(--navy);font-size:34px;margin:0 0 6px;letter-spacing:-.5px}
+.sub{color:var(--zacht);margin:0 0 26px}
+.twee{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.twee{grid-template-columns:1fr}}
+.kaart{background:var(--kaart);border:1px solid var(--lijn);border-radius:14px;padding:20px 22px}
+.kaart h2{margin:0 0 6px;font-size:20px;color:var(--navy)}
+.kaart p{margin:0 0 14px;color:var(--zacht);font-size:15px}
+a.knop{display:inline-block;background:var(--blauw);color:#fff;text-decoration:none;font-weight:600;border-radius:9px;padding:10px 16px}
+a.knop.groen{background:var(--groen)}
+.privacy{background:var(--kaart);border-left:5px solid var(--blauw);border-radius:10px;padding:14px 18px;margin:22px 0;font-size:15px}
+h3{color:var(--navy);margin:26px 0 8px;font-size:17px}
+ul{margin:0;padding-left:20px}
+li{margin:4px 0}
+a{color:var(--blauw)}
+footer{color:var(--zacht);font-size:13px;margin-top:30px}
+</style>
+</head>
+<body>
+<div class="regenboog"></div>
+<main>
+  <h1>Sticht Leerlingmonitor</h1>
+  <p class="sub">Voor de scholen van Het Sticht: per groep bijhouden welke kenmerken leerlingen hebben en welke ondersteuning ze krijgen.</p>
+
+  <div class="twee">
+    <div class="kaart">
+      <h2>Voor scholen</h2>
+      <p>Een nieuwe monitor maken, bijwerken, doorrollen naar een nieuw schooljaar en de gegevens voor Het Sticht.</p>
+      <a class="knop" href="app/">Open de Leerlingmonitor</a>
+    </div>
+    <div class="kaart">
+      <h2>Voor Het Sticht</h2>
+      <p>Het totaaloverzicht van alle scholen, op basis van de aantallen die de scholen aanleveren.</p>
+      <a class="knop groen" href="hetsticht/">Open het totaaloverzicht</a>
+    </div>
+  </div>
+
+  <div class="privacy"><b>Alles gebeurt op je eigen computer.</b> De pagina draait in je internetbrowser. Bestanden die je kiest, worden niet geüpload en gaan nergens naartoe:
+  de pagina mag technisch gezien alleen het rekenprogramma ophalen, verder niets. Je kunt de Leerlingmonitor in Edge of Chrome ook installeren als app (knop rechtsboven in de pagina).</div>
+
+  <h3>Handleidingen en video's</h3>
+  <ul>
+    <li><a href="Sticht%20Leerlingmonitor%20Wat%20heb%20je%20nodig.pdf">Wat heb je nodig?</a> (één kaartje)</li>
+    <li><a href="Sticht%20Leerlingmonitor%20Handleiding.pdf">Handleiding</a> voor intern begeleiders, kwaliteitscoördinatoren en directeuren</li>
+    <li><a href="Sticht%20Leerlingmonitor%20Veiligheid%20en%20privacy.pdf">Veiligheid en privacy</a> (één kaartje)</li>
+    <li><a href="Sticht%20Leerlingmonitor%20Totaaloverzicht%20Het%20Sticht.pdf">Handleiding voor Het Sticht</a></li>
+    <li>Video's: <a href="Sticht%20Leerlingmonitor%20Demo%201%20-%20Een%20nieuwe%20monitor%20aanmaken.mp4">1. Een nieuwe monitor</a>,
+      <a href="Sticht%20Leerlingmonitor%20Demo%202%20-%20Naar%20een%20nieuw%20schooljaar.mp4">2. Nieuw schooljaar</a>,
+      <a href="Sticht%20Leerlingmonitor%20Demo%203%20-%20Aanpassingen%20tijdens%20het%20jaar.mp4">3. Tijdens het jaar</a>,
+      <a href="Sticht%20Leerlingmonitor%20Demo%204%20-%20Aanleveren%20bij%20Het%20Sticht.mp4">4. Aanleveren bij Het Sticht</a></li>
+    <li><a href="Voorbeeld%20Leerlingenlijst%20KD.xls">Voorbeeld van de Leerlingenlijst KD</a> (verzonnen gegevens)</li>
+  </ul>
+
+  <h3>Liever een los bestand?</h3>
+  <p style="margin:0">Je kunt de pagina ook als bestand op je computer zetten: <a href="https://github.com/tiddeman83/schoolmonitor-releases/releases/latest/download/Sticht-Leerlingmonitor-scholen.zip">download het pakket</a>.
+  Dan moet je bij een nieuwe versie wel zelf het bestand vervangen.</p>
+
+  <footer>Ontwikkeld door Tijmen Baas · bugs en wensen: <a href="mailto:t.baas2@windroos.nl">t.baas2@windroos.nl</a> · <a href="test/app/">testversie</a></footer>
+</main>
+</body>
+</html>

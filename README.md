@@ -2,6 +2,12 @@
 
 Met de Sticht Leerlingmonitor houden de scholen van Het Sticht per groep bij welke kenmerken hun leerlingen hebben en welke ondersteuning ze krijgen, volgens de ondersteuningsniveaus van ZOUT.
 
+## Online versie
+
+De Leerlingmonitor staat ook online: **https://tiddeman83.github.io/schoolmonitor-releases/**. Dat is altijd de nieuwste versie, en in Edge of Chrome kun je hem installeren als app.
+Ook online gebeurt alles op je eigen computer: de pagina draait in je browser en mag technisch gezien alleen het rekenprogramma ophalen. Bestanden die je kiest, worden niet geüpload.
+De testversie staat op .../test/app/ en .../test/hetsticht/.
+
 ## Downloaden in één keer
 
 - **Voor de scholen:** [Sticht-Leerlingmonitor-scholen.zip](https://github.com/tiddeman83/schoolmonitor-releases/releases/latest/download/Sticht-Leerlingmonitor-scholen.zip). Daarin zitten de pagina, de handleiding, de kaartjes, een voorbeeld van de Leerlingenlijst KD en vier korte video's met gesproken uitleg.
