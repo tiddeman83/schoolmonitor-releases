@@ -181,7 +181,7 @@ footer{max-width:960px;margin:0 auto;padding:0 16px 30px;font-size:12px;color:va
     <div class="volgende" style="margin-top:14px"><b>En dan:</b><ol id="daarna"></ol></div>
   </section>
 </main>
-<footer>Sticht Leerlingmonitor · versie 0.9.5 <span id="update-status"></span> · Het Sticht · Bugs en wensen: <a href="mailto:t.baas2@windroos.nl">t.baas2@windroos.nl</a></footer>
+<footer>Sticht Leerlingmonitor · versie 0.9.6 <span id="update-status"></span> · Het Sticht · Bugs en wensen: <a href="mailto:t.baas2@windroos.nl">t.baas2@windroos.nl</a></footer>
 
 <script type="text/plain" id="py-sjabloon">"""Sticht Leerlingmonitor jaarbestand – sjabloon (Excel zonder macro's).
 
@@ -1454,6 +1454,7 @@ KOLOMMEN = {
     'naam': ['naam', 'leerling', 'leerlingnaam', 'volledige naam'],
     'geb': ['geboortedatum', 'geb. datum', 'geb.datum', 'geboren', 'gebdat'],
     'groep': ['groep', 'klas', 'groepsnaam', 'stamgroep'],
+    'naamklas': ['naam klas', 'klasnaam', 'naam groep'],
     'leerjaar': ['klas- of groepnummer', 'groepnummer', 'leerjaar', 'jaargroep'],
     'geslacht': ['geslacht', 'sekse'],
 }
@@ -1534,9 +1535,12 @@ def lees_parnassys(data: bytes, bestandsnaam: str):
     # geslacht: J/M (jongen/meisje) of M/V (man/vrouw)?
     waarden = {str(cel(r, 'geslacht') or '').strip()[:1].upper() for r in rijen}
     geslacht = ({'J': 'LG01', 'M': 'LG02'} if 'J' in waarden else {'M': 'LG01', 'V': 'LG02', 'F': 'LG02'})
-    uit, overgeslagen = [], 0
+    uit, overgeslagen, naamklas = [], 0, False
     for r in rijen:
         groep = norm_groep(cel(r, 'groep'))
+        if not groep:      # sommige scholen: in "Groep" staat alleen het woord "Groep", de echte groep staat in "Naam klas"
+            groep = norm_groep(cel(r, 'naamklas'))
+            naamklas = naamklas or bool(groep)
         if 'achter' in kol:
             voor, tv, achter = str(cel(r, 'voor') or '').strip(), str(cel(r, 'tv') or '').strip(), str(cel(r, 'achter') or '').strip()
         else:
@@ -1551,6 +1555,8 @@ def lees_parnassys(data: bytes, bestandsnaam: str):
             uit[-1]['nr'] = eigen_nummer(uit[-1])
     if not uit:
         raise RollforwardFout('Er staan geen leerlingen in de groepslijst.')
+    if not naamklas:
+        kol.pop('naamklas', None)      # alleen als gebruikt meetellen
     kop = [str(k or '').strip() for k in tabel[kop_r]]
     info = {'gebruikt': [kop[i] for i in sorted(kol.values())], 'genegeerd': sum(1 for i, k in enumerate(kop) if k and i not in kol.values()),
             'nummer': 'nr' in kol, 'geslacht': 'geslacht' in kol, 'leerjaar': 'leerjaar' in kol}
@@ -2521,7 +2527,7 @@ def koepel_maken(lijst, schooljaar, afschermen, verwacht=None):
 const $ = s => document.querySelector(s);
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
 const XLSX = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-const VERSIE = '0.9.5';
+const VERSIE = '0.9.6';
 const UPDATE_JSON = 'https://raw.githubusercontent.com/tiddeman83/schoolmonitor-releases/main/versie.json', UPDATE_HTML = 'https://raw.githubusercontent.com/tiddeman83/schoolmonitor-releases/main/Sticht%20Leerlingmonitor.html', BESTANDSNAAM = 'Sticht Leerlingmonitor.html';
 const SCHOLEN = ["Aloysius school", "Daltonschool Nicolaas", "Damiaanschool Centrum", "Damiaanschool Kerckebosch", "KBS De Griffel", "Montini Jenaplanschool", "Valkenheuvel", "De Kameleon", "De Windroos"], MERK = 'Sticht Leerlingmonitor';
 const vandaag = () => new Date().toISOString().slice(0, 10);

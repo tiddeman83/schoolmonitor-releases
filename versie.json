@@ -1,6 +1,6 @@
 {
-  "versie": "0.9.5",
-  "datum": "2026-10-05",
-  "notities": "Vier korte video's met gesproken uitleg, een beter hoofdstuk over het historiebestand, en een uitleg voor testgebruikers. Bugs en wensen: t.baas2@windroos.nl.",
+  "versie": "0.9.6",
+  "datum": "2026-10-13",
+  "notities": "Leest nu ook de Leerlingenlijst KD van scholen waar de groep in de kolom \"Naam klas\" staat (bijvoorbeeld \"1/2 Giraffen\").",
   "sjabloon": 2
 }
