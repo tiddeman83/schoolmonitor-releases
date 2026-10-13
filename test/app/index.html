@@ -5,20 +5,24 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://cdn.jsdelivr.net blob:; connect-src 'self' https://cdn.jsdelivr.net https://raw.githubusercontent.com; style-src 'unsafe-inline'; img-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sticht Leerlingmonitor</title>
-<style>/* Gedeelde opmaak van Sticht Leerlingmonitor.html en het Totaaloverzicht. Rustig, als een schooldocument:
-   witte pagina, één kolom, lijnen in plaats van kaartjes, kleur alleen waar het iets betekent. */
-:root{--bg:#fff;--vlak:#f6f7f9;--tekst:#1b1f27;--zacht:#5d6470;--lijn:#dcdfe4;--accent:#102A4C;--accent2:#eef2f7;
-  --goed:#23704a;--let:#9a5b00;--fout:#b3261e;--r1:#92D050;--r2:#FFE600;--r3:#FFC000;--r4:#FF0000;
-  --kop:Georgia,"Iowan Old Style","Palatino Linotype",serif;--kaart:var(--bg)}
-@media (prefers-color-scheme:dark){:root{--bg:#15181e;--vlak:#1c2028;--tekst:#e7e9ee;--zacht:#a0a7b4;--lijn:#2e3440;--accent:#a9c4ea;--accent2:#1f2633;
-  --goed:#6cc495;--let:#e0a64a;--fout:#ef7d74}}
+<style>/* Gedeelde opmaak van Sticht Leerlingmonitor.html en het Totaaloverzicht.
+   Rustige opbouw (één kolom, lijnen in plaats van kaartjes) in de kleuren van Het Sticht:
+   geel, turkoois, roze, oranje en lichtgroen, met de zeshoeken aan de rand zoals op hetsticht.nl. */
+:root{--bg:#fff;--vlak:#f7fafa;--tekst:#212529;--zacht:#5f666d;--lijn:#dfe3e6;--accent:#12778b;--accent2:#e6f6fa;
+  --roze:#cf3f95;--geel:#f7c809;--turk:#60c6dc;--oranje:#f68b1f;--lime:#a9c52f;--donker:#343a40;
+  --goed:#23704a;--let:#b05f00;--fout:#b3261e;--r1:#92D050;--r2:#FFE600;--r3:#FFC000;--r4:#FF0000;
+  --kop:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--kaart:var(--bg)}
+@media (prefers-color-scheme:dark){:root{--bg:#16191d;--vlak:#1d2126;--tekst:#e9ecef;--zacht:#a3aab1;--lijn:#30363c;--accent:#6fd0e4;--accent2:#173038;
+  --roze:#f59bd0;--goed:#6cc495;--let:#f0a54a;--fout:#ef7d74}}
 *{box-sizing:border-box}
 [hidden]{display:none !important}
-body{margin:0;background:var(--bg);color:var(--tekst);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-.regenboog{height:3px;background:var(--accent)}
+body{margin:0;background:var(--bg);color:var(--tekst);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='160'%20height='300'%3E%3Cpath%20d='M10%2C40%20L90%2C86%20L90%2C179%20L10%2C225%20L-70%2C179%20L-70%2C86Z'%20fill='%23F47BC4'/%3E%3Cpath%20d='M70%2C220%20L110%2C243%20L110%2C289%20L70%2C312%20L30%2C289%20L30%2C243Z'%20fill='%23A9C52F'/%3E%3Cpath%20d='M15%2C-30%20L50%2C-10%20L50%2C31%20L15%2C51%20L-20%2C31%20L-20%2C-10Z'%20fill='%2360C6DC'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='220'%20height='330'%3E%3Cpath%20d='M165%2C-60%20L260%2C-5%20L260%2C105%20L165%2C159%20L70%2C105%20L70%2C-5Z'%20fill='%23F68B1F'/%3E%3Cpath%20d='M185%2C150%20L250%2C188%20L250%2C263%20L185%2C300%20L120%2C263%20L120%2C188Z'%20fill='%23F7C809'/%3E%3Cpath%20d='M75%2C230%20L110%2C250%20L110%2C291%20L75%2C311%20L40%2C291%20L40%2C250Z'%20fill='%2360C6DC'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 0 top 40px,right 0 top 0}
+@media (max-width:1220px){body{background-image:none}}
+.regenboog{height:6px;background:linear-gradient(90deg,var(--geel) 0 20%,var(--turk) 20% 40%,var(--roze) 40% 60%,var(--oranje) 60% 80%,var(--lime) 80%)}
 header,main,footer{max-width:880px;margin:0 auto;padding-left:24px;padding-right:24px}
 header{padding-top:36px;padding-bottom:18px;display:flex;gap:16px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;border-bottom:1px solid var(--lijn)}
-h1{margin:0;font:400 32px/1.15 var(--kop);color:var(--accent)}
+h1{margin:0;font:700 30px/1.15 var(--kop);color:var(--roze);letter-spacing:-.3px}
 h1 small{display:block;font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--zacht);margin-top:6px}
 .status{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--zacht)}
 .stip{width:8px;height:8px;border-radius:50%;background:var(--let);animation:puls 1.2s infinite}
@@ -36,16 +40,16 @@ main{padding-top:6px;padding-bottom:48px}
 .modus{display:flex;flex-wrap:wrap;gap:4px 26px;border-bottom:1px solid var(--lijn);margin-bottom:16px}
 .modus button{font:inherit;font-size:16px;border:0;background:none;color:var(--zacht);padding:8px 0 10px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
 .modus button:hover{color:var(--tekst)}
-.modus button.aan{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+.modus button.aan{color:var(--tekst);border-bottom-color:var(--turk);font-weight:700}
 
 /* de vakken voor de bestanden */
 .stappen{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.stap,.vak{border:1.5px dashed #b9bfc8;border-radius:4px;padding:16px;position:relative;cursor:pointer;min-height:132px;transition:background .15s,border-color .15s}
+.stap,.vak{border:2px dashed var(--turk);border-radius:4px;padding:16px;position:relative;cursor:pointer;min-height:132px;transition:background .15s,border-color .15s}
 .vak{min-height:0;padding:26px;text-align:center}
 .stap:hover,.stap.sleep,.vak:hover,.vak.sleep{border-color:var(--accent);background:var(--accent2)}
 .stap.gevuld{border-style:solid;border-color:var(--goed)}
 .stap.fout{border-style:solid;border-color:var(--fout)}
-.nr{font-weight:700;color:var(--accent);margin-right:6px}
+.nr{font-weight:800;color:var(--roze);margin-right:6px}
 .nr::after{content:"."}
 .stap h3{margin:0 0 6px;font-size:16px;padding-right:18px}
 .stap p{margin:0;color:var(--zacht);font-size:14px}
@@ -63,7 +67,7 @@ input[type=file]{display:none}
 
 /* groepen nakijken */
 .leerjaren{margin-top:20px;padding:16px 0 4px;border-top:1px solid var(--lijn)}
-.leerjaren h4{margin:0 0 4px;font:400 20px/1.3 var(--kop);color:var(--accent)}
+.leerjaren h4{margin:0 0 4px;font:700 19px/1.3 var(--kop);color:var(--tekst)}
 .leerjaren p{margin:0 0 8px;font-size:14.5px;color:var(--zacht);max-width:72ch}
 .leerjaren table{width:auto;min-width:420px}
 .leerjaren tr.onbekend td:first-child{font-weight:700}
@@ -82,7 +86,7 @@ input:not([type=checkbox]):not([type=file]),select{font:inherit !important;paddi
 label.veld input:not([type=checkbox]){width:170px}
 .knoppen{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-left:auto}
 button.hoofd{font:inherit;font-weight:600;background:var(--accent);color:#fff;border:0;border-radius:4px;padding:11px 20px;cursor:pointer}
-@media (prefers-color-scheme:dark){button.hoofd{color:#10161f}}
+@media (prefers-color-scheme:dark){button.hoofd{color:#0f1a1d}}
 button.hoofd:hover:not(:disabled){filter:brightness(1.15)}
 button.hoofd:disabled{opacity:.35;cursor:not-allowed}
 button.link{font:inherit;background:none;border:0;color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:0;font-size:15px}
@@ -94,10 +98,12 @@ button.link{font:inherit;background:none;border:0;color:var(--accent);cursor:poi
 #resultaat{display:none}
 .foutkaart{display:none;color:var(--fout)}
 .titel{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
-.titel h2,#r-titel{margin:0;font:400 24px/1.25 var(--kop) !important;color:var(--accent)}
-.tegels{display:flex;flex-wrap:wrap;margin:18px 0;border-top:1px solid var(--lijn);border-bottom:1px solid var(--lijn)}
-.tegel{flex:1 1 120px;padding:12px 16px 12px 0;margin-right:16px}
-.tegel b{display:block;font:400 30px/1.15 var(--kop);color:var(--tekst)}
+.titel h2,#r-titel{margin:0;font:700 22px/1.25 var(--kop) !important;color:var(--roze)}
+.tegels{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}
+.tegel{flex:1 1 120px;padding:10px 14px;background:var(--vlak);border-top:5px solid var(--geel)}
+.tegel:nth-child(5n+2){border-top-color:var(--turk)}.tegel:nth-child(5n+3){border-top-color:var(--roze)}
+.tegel:nth-child(5n+4){border-top-color:var(--oranje)}.tegel:nth-child(5n){border-top-color:var(--lime)}
+.tegel b{display:block;font:700 28px/1.15 var(--kop);color:var(--tekst)}
 .tegel span{font-size:13.5px;color:var(--zacht)}
 .tegel.r b{color:var(--fout)}
 .download{display:flex;flex-direction:column;border-top:1px solid var(--lijn)}
@@ -108,11 +114,12 @@ button.link{font:inherit;background:none;border:0;color:var(--accent);cursor:poi
 @media (prefers-color-scheme:dark){.xls{color:#7cc89a;border-color:#7cc89a}}
 .meldingen{margin:16px 0 0;padding:0;list-style:none}
 .meldingen li{padding:6px 0 6px 18px;position:relative;font-size:15px}
-.meldingen li::before{content:"";position:absolute;left:2px;top:14px;width:7px;height:7px;border-radius:50%;background:var(--let)}
+.meldingen li::before{content:"";position:absolute;left:1px;top:12px;width:9px;height:10px;background:var(--oranje);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
 .balken{display:grid;grid-template-columns:auto 1fr auto;gap:6px 12px;align-items:center;font-size:14px}
-.balk{height:10px;border-radius:2px;background:var(--accent);opacity:.75}
+.balk{height:10px;border-radius:2px;background:var(--turk)}
 details{border-top:1px solid var(--lijn);padding:10px 0}
 summary{cursor:pointer;font-weight:600}
+summary::marker{color:var(--roze)}
 table{border-collapse:collapse;width:100%;font-size:14px;margin-top:8px}
 td,th{text-align:left;padding:6px 8px 6px 0;border-bottom:1px solid var(--lijn)}
 th{color:var(--zacht);font-weight:600}
@@ -122,7 +129,7 @@ td.getal{text-align:right;font-variant-numeric:tabular-nums}
 .volgende ol{padding-left:20px;margin:6px 0 0}
 .update{display:none;gap:12px;align-items:center;flex-wrap:wrap;border:1px solid var(--goed);color:var(--tekst);border-radius:4px;padding:12px 14px;margin:14px 0 4px;font-size:15px}
 .update button{font:inherit;font-weight:600;background:var(--goed);color:#fff;border:0;border-radius:4px;padding:7px 14px;cursor:pointer;margin-left:auto}
-footer{padding-bottom:32px;padding-top:16px;border-top:1px solid var(--lijn);font-size:13.5px;color:var(--zacht)}
+footer{max-width:none;padding:22px max(24px,calc((100% - 832px)/2)) 28px;margin-top:24px;font-size:13.5px;color:#e9ecef;background:var(--donker)}
 footer a{color:inherit}
 a{color:var(--accent)}
 label.veld select,label.veld input:not([type=checkbox]){min-height:38px}

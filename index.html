@@ -2,54 +2,67 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; form-action 'none'; base-uri 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; form-action 'none'; base-uri 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sticht Leerlingmonitor</title>
 <link rel="icon" href="iconen/icoon-192.png">
 <style>
-:root{--bg:#fff;--tekst:#1b1f27;--zacht:#5d6470;--lijn:#dcdfe4;--accent:#102A4C;--kop:Georgia,"Iowan Old Style","Palatino Linotype",serif}
-@media (prefers-color-scheme:dark){:root{--bg:#15181e;--tekst:#e7e9ee;--zacht:#a0a7b4;--lijn:#2e3440;--accent:#a9c4ea}}
+:root{--bg:#fff;--vlak:#f7fafa;--tekst:#212529;--zacht:#5f666d;--lijn:#dfe3e6;--accent:#12778b;--roze:#cf3f95;
+  --geel:#f7c809;--turk:#60c6dc;--oranje:#f68b1f;--lime:#a9c52f;--donker:#343a40}
+@media (prefers-color-scheme:dark){:root{--bg:#16191d;--vlak:#1d2126;--tekst:#e9ecef;--zacht:#a3aab1;--lijn:#30363c;--accent:#6fd0e4;--roze:#f59bd0}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tekst);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;border-top:3px solid var(--accent)}
-main{max-width:720px;margin:0 auto;padding:56px 24px 40px}
-h1{font:400 44px/1.1 var(--kop);color:var(--accent);margin:0 0 16px}
-.intro{font-size:19px;color:var(--zacht);margin:0 0 40px;max-width:36em}
-h2{font:400 24px/1.3 var(--kop);color:var(--accent);margin:44px 0 6px}
-.keuze{border-top:1px solid var(--lijn)}
-.rij{display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:center;padding:20px 0;border-bottom:1px solid var(--lijn)}
-.rij h3{margin:0;font-size:18px}
-.rij p{margin:2px 0 0;color:var(--zacht);font-size:15.5px}
-a.knop{display:inline-block;background:var(--accent);color:var(--bg);text-decoration:none;font-weight:600;border-radius:4px;padding:10px 18px;white-space:nowrap}
-a.knop:hover{filter:brightness(1.15)}
-@media (max-width:560px){.rij{grid-template-columns:1fr}}
+body{margin:0;background:var(--bg);color:var(--tekst);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='160'%20height='300'%3E%3Cpath%20d='M10%2C40%20L90%2C86%20L90%2C179%20L10%2C225%20L-70%2C179%20L-70%2C86Z'%20fill='%23F47BC4'/%3E%3Cpath%20d='M70%2C220%20L110%2C243%20L110%2C289%20L70%2C312%20L30%2C289%20L30%2C243Z'%20fill='%23A9C52F'/%3E%3Cpath%20d='M15%2C-30%20L50%2C-10%20L50%2C31%20L15%2C51%20L-20%2C31%20L-20%2C-10Z'%20fill='%2360C6DC'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='220'%20height='330'%3E%3Cpath%20d='M165%2C-60%20L260%2C-5%20L260%2C105%20L165%2C159%20L70%2C105%20L70%2C-5Z'%20fill='%23F68B1F'/%3E%3Cpath%20d='M185%2C150%20L250%2C188%20L250%2C263%20L185%2C300%20L120%2C263%20L120%2C188Z'%20fill='%23F7C809'/%3E%3Cpath%20d='M75%2C230%20L110%2C250%20L110%2C291%20L75%2C311%20L40%2C291%20L40%2C250Z'%20fill='%2360C6DC'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 0 top 60px,right 0 top 6px}
+@media (max-width:1100px){body{background-image:none}}
+.strook{height:6px;background:linear-gradient(90deg,var(--geel) 0 20%,var(--turk) 20% 40%,var(--roze) 40% 60%,var(--oranje) 60% 80%,var(--lime) 80%)}
+.kolom{max-width:760px;margin:0 auto;padding:0 24px}
+.kop{padding:64px 0 40px}
+h1{font:700 42px/1.1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--roze);margin:0 0 14px;letter-spacing:-.5px}
+.intro{font-size:19px;color:var(--zacht);margin:0;max-width:36em}
+.geel{background:var(--geel);padding:36px 0 40px}
+.geel h2{color:#212529;margin:0 0 16px}
+.keuze{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.keuze{grid-template-columns:1fr}}
+.paneel{background:#fff;color:#212529;padding:20px 22px 22px;border-top:5px solid var(--turk);display:flex;flex-direction:column}
+.paneel:nth-child(2){border-top-color:var(--roze)}
+.paneel h3{margin:0 0 4px;font-size:19px}
+.paneel p{margin:0 0 18px;color:#5f666d;font-size:15.5px;flex:1}
+a.knop{align-self:flex-start;display:inline-block;background:#12778b;color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;white-space:nowrap}
+a.knop:hover{background:#0e5f6f}
+.paneel:nth-child(2) a.knop{background:#b8327f}.paneel:nth-child(2) a.knop:hover{background:#962766}
+h2{font:700 22px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--roze);margin:44px 0 8px}
 p{margin:0 0 12px}
 a{color:var(--accent);text-underline-offset:3px}
-dl{margin:10px 0 0;border-top:1px solid var(--lijn)}
-dl div{display:grid;grid-template-columns:15em 1fr;gap:4px 20px;padding:10px 0;border-bottom:1px solid var(--lijn);font-size:15.5px}
+dl{margin:10px 0 0}
+dl div{display:grid;grid-template-columns:15em 1fr;gap:4px 20px;padding:11px 0 11px 22px;border-bottom:1px solid var(--lijn);font-size:15.5px;position:relative}
+dl div::before{content:"";position:absolute;left:2px;top:17px;width:10px;height:11px;background:var(--turk);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+dl div:nth-child(2)::before{background:var(--roze)}dl div:nth-child(3)::before{background:var(--oranje)}dl div:nth-child(4)::before{background:var(--lime)}dl div:nth-child(5)::before{background:var(--geel)}
 @media (max-width:560px){dl div{grid-template-columns:1fr}}
 dt{font-weight:600}
 dd{margin:0;color:var(--zacht)}
 .soort{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--zacht);margin-left:6px}
-footer{max-width:720px;margin:0 auto;padding:20px 24px 40px;font-size:14px;color:var(--zacht)}
+main{padding-bottom:48px}
+footer{background:var(--donker);color:#e9ecef;font-size:14px}
+footer .kolom{padding-top:22px;padding-bottom:28px}
 footer a{color:inherit}
 </style>
 </head>
 <body>
-<main>
+<div class="strook"></div>
+<div class="kolom kop">
   <h1>Sticht Leerlingmonitor</h1>
   <p class="intro">Per groep bijhouden welke kenmerken leerlingen hebben en welke ondersteuning ze krijgen, volgens de niveaus van ZOUT.
   Elke school werkt met hetzelfde Excel-bestand, en Het Sticht krijgt alleen de aantallen.</p>
-
+</div>
+<div class="geel"><div class="kolom">
   <div class="keuze">
-    <div class="rij">
-      <div><h3>Voor scholen</h3><p>Een nieuwe monitor maken, bijwerken, naar een nieuw schooljaar, en de aantallen voor Het Sticht.</p></div>
-      <a class="knop" href="app/">Open de Leerlingmonitor</a>
-    </div>
-    <div class="rij">
-      <div><h3>Voor Het Sticht</h3><p>Eén overzicht van alle scholen samen, uit de bestanden die de scholen aanleveren.</p></div>
-      <a class="knop" href="hetsticht/">Open het totaaloverzicht</a>
-    </div>
+    <div class="paneel"><h3>Voor scholen</h3><p>Een nieuwe monitor maken, bijwerken, naar een nieuw schooljaar, en de aantallen voor Het Sticht.</p>
+      <a class="knop" href="app/">Open de Leerlingmonitor</a></div>
+    <div class="paneel"><h3>Voor Het Sticht</h3><p>Eén overzicht van alle scholen samen, uit de bestanden die de scholen aanleveren.</p>
+      <a class="knop" href="hetsticht/">Open het totaaloverzicht</a></div>
   </div>
+</div></div>
+<main class="kolom">
 
   <h2>Waar blijven de gegevens?</h2>
   <p>Op je eigen computer. De pagina draait in je browser. De bestanden die je kiest, worden niet geüpload: de pagina mag alleen het rekenprogramma ophalen, verder niets.
@@ -68,6 +81,6 @@ footer a{color:inherit}
   <p>Je kunt de pagina ook op je computer zetten: <a href="https://github.com/tiddeman83/schoolmonitor-releases/releases/latest/download/Sticht-Leerlingmonitor-scholen.zip">download het pakket</a>.
   Bij een nieuwe versie moet je dan zelf het bestand vervangen.</p>
 </main>
-<footer>Gemaakt door Tijmen Baas voor Het Sticht · bugs en wensen: <a href="mailto:t.baas2@windroos.nl">t.baas2@windroos.nl</a> · <a href="test/app/">testversie</a></footer>
+<footer><div class="kolom">Gemaakt door Tijmen Baas voor Het Sticht · bugs en wensen: <a href="mailto:t.baas2@windroos.nl">t.baas2@windroos.nl</a> · <a href="test/app/">testversie</a></div></footer>
 </body>
 </html>
